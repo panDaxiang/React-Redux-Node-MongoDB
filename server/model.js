@@ -10,9 +10,9 @@ mongoose.connect(DB_URL, err => {
 });
 
 const model = {
-  name: { type: String, require: true },
-  age: { type: String, require: true },
-  address: { type: String, require: true },
+  user: { type: String, require: true },
+  age: { type: String, require: false },
+  address: { type: String, require: false },
   tags: { type: Array, require: true }
 };
 

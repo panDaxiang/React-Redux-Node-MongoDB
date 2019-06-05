@@ -1,4 +1,19 @@
-import './style.scss'
-import EditableTable from '@pages/table/table'
+import { Provider } from "react-redux";
+import 'babel-polyfill';
 
-ReactDOM.render(<EditableTable />, root);
+import store from "@store/store";
+import EditableTable from "@pages/table/table";
+
+import "./style.scss";
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <EditableTable />
+      </Provider>
+    );
+  }
+}
+
+ReactDOM.render(<App />, root);

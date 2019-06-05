@@ -7,8 +7,9 @@ const FILTER = {"__v": 0}
 
 // 新增用户
 Router.post("/add", (req, res) => {
-  const { name, age, address, tags } = req.body;
-  new userModel({ name, age, address, tags }).save((err, doc) => {
+  console.log(req.body)
+  const { user, age, address, tags } = req.body;
+  new userModel({ user, age, address, tags }).save((err, doc) => {
     if (err) {
       console.log(err)
     } else {
@@ -18,7 +19,7 @@ Router.post("/add", (req, res) => {
 });
 
 Router.get("/list", (req, res) => {
-  const {name, age, address, tags} = req.query;
+  const {user, age, address, tags} = req.query;
   userModel.find({}, FILTER, (err, doc) => {
     if (err) {
       res.json({
